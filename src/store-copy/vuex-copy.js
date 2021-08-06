@@ -1,12 +1,12 @@
-// 1.插件：挂载$store
-// 2.实现Store
+// 1.插件：挂载 $store
+// 2.实现 Store
 
 let Vue;
 
 class Store {
   constructor(options) {
-    // data响应式处理
-    // this.$store.state.xx
+    // data 响应式处理
+    // this.$store.state.xxx
     this._vm = new Vue({
       data: {
         $$state: options.state
@@ -20,8 +20,8 @@ class Store {
     this.dispatch = this.dispatch.bind(this)
 
     this.getters = {}
-    // defineProperty(this.getters, 'doubleCounter', {get(){}})
-    // 最后还能利用vue计算属性做缓存
+    // defineProperty(this.getters, 'doubleCounter', { get () {} })
+    // 最后还能利用 vue 计算属性做缓存
   }
 
   get state() {
@@ -30,9 +30,8 @@ class Store {
 
   set state(v) {
     console.error('please use replaceState to reset state');
-    
   }
-  
+
   commit(type, payload) {
     const entry = this._mutations[type]
     if (!entry) {
@@ -41,7 +40,7 @@ class Store {
 
     entry(this.state, payload)
   }
-  
+
   dispatch(type, payload) {
     const entry = this._actions[type]
     if (!entry) {
@@ -50,7 +49,6 @@ class Store {
 
     entry(this, payload)
   }
-  
 }
 
 // Vue.use

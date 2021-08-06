@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import Child1 from '@/components/communication/Child1.vue'
-  import Child2 from '@/components/communication/Child2.vue'
-  
+  import Child1 from '@/components/communication/Child1.vue';
+  import Child2 from '@/components/communication/Child2.vue';
+
   export default {
     components: {
       Child1, Child2
@@ -26,7 +26,7 @@
       console.log(this.$children);
       // $refs用于引用命名的元素或组件，可包含普通元素
       console.log(this.$refs.child2);
-      
+
     },
   }
 </script>

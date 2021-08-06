@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import ElementTest from '@/components/form/ElementTest.vue'
-  
+  import ElementTest from '@/components/form/ElementTest.vue';
+
   export default {
     components: {
       ElementTest

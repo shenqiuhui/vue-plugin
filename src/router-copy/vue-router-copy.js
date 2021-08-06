@@ -12,7 +12,7 @@ class VueRouter {
     // 把 current 作为响应式数据
     // 将来发生变化，router-view 的 render 函数能够再次执行
     const initial = window.location.hash.slice(1) || "/";
-    Vue.util.defineReactive(this, 'current', initial)
+    Vue.util.defineReactive(this, 'current', initial);
 
     // 监听 hash 变化
     window.addEventListener("hashchange", () => {
@@ -68,7 +68,7 @@ VueRouter.install = function(_Vue) {
         (route) => route.path === this.$router.current
       );
       if (route) {
-        component = route.component
+        component = route.component;
       }
       console.log(this.$router.current, component);
 
